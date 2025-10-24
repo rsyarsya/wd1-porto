@@ -43,9 +43,10 @@ return (
             </a>
 
             <ul className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 
+                    transition-opacity duration-500 ease-out
                     ${isScroll 
-                        ? '' 
-                        : 'bg-white shadow-sm bg-opacity-50'
+                        ? 'opacity-100' 
+                        : 'bg-white shadow-sm bg-opacity-50 opacity-100'
                     }
                 `}
             >
@@ -76,9 +77,9 @@ return (
             ref={sideMenuRef}
             className='flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 h-screen 
                      bg-white/30 backdrop-blur-xl shadow-lg border border-white/20
-                     transition-all duration-500 z-[60] pointer-events-auto'
+                     transition-all duration-500 z-60 pointer-events-auto'
         >
-            <div className='absolute right-6 top-6 cursor-pointer z-[70]' onClick={closeMenu}>
+            <div className='absolute right-6 top-6 cursor-pointer z-70' onClick={closeMenu}>
                      <Image src={assets.close_black} alt="close_icon" className='w-5' />
             </div>
 
