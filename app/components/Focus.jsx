@@ -8,7 +8,7 @@ const Focus = () => {
         <h4 className='text-center mb-2 text-lg font-Ovo'>
         What I do</h4>
         <h2 className='text-center text-5xl font-ovo '>
-        Current Focus</h2>
+        Current Focus & Projects</h2>
 
         <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
         I`m currently exploring the intersection of sustainability, IoT, and renewable energy — integrating clean technology with social impact.
