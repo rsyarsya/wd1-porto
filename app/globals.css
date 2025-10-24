@@ -14,6 +14,13 @@
 .shadow-white {
   box-shadow: 4px 4px 0 #fff;
 }
+
+.grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
 /* Font default */
 body {
   font-family: 'Outfit', sans-serif;

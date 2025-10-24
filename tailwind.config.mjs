@@ -17,6 +17,12 @@ const config = {
       'light-hover': '#fcf4ff',
       'dark-hover': '#2a004a',
       'dark-theme': '#11001F',
+
+      gridTemplateColumns: {
+        'auto' : 'repeat(auto-fit, minmax(200px, 1fr))'
+      },
+
+      
     },
     extend: {
       fontFamily: {
