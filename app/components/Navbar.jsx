@@ -42,7 +42,13 @@ return (
                 <Image src={assets.logo} alt="logo" className='w-28 cursor-pointer mr-14'/>
             </a>
 
-            <ul className='hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white/20 backdrop-blur-sm shadow-sm'>
+            <ul className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 
+                    ${isScroll 
+                        ? '' 
+                        : 'bg-white shadow-sm bg-opacity-50'
+                    }
+                `}
+            >
                 <li><a className='font-Ovo hover:text-gray-600 transition-colors' href="#top">Home</a></li>
                 <li><a className='font-Ovo hover:text-gray-600 transition-colors' href="#about">About me</a></li>
                 <li><a className='font-Ovo hover:text-gray-600 transition-colors' href="#services">Services</a></li>
