@@ -51,7 +51,7 @@ return (
             >
                 <li><a className='font-Ovo hover:text-gray-600 transition-colors' href="#top">Home</a></li>
                 <li><a className='font-Ovo hover:text-gray-600 transition-colors' href="#about">About me</a></li>
-                <li><a className='font-Ovo hover:text-gray-600 transition-colors' href="#services">Services</a></li>
+                <li><a className='font-Ovo hover:text-gray-600 transition-colors' href="#Focus">Focus</a></li>
                 <li><a className='font-Ovo hover:text-gray-600 transition-colors' href="#work">My Works</a></li>
                 <li><a className='font-Ovo hover:text-gray-600 transition-colors' href="#contact">Contact me</a></li>
             </ul>   
@@ -84,7 +84,7 @@ return (
 
             <li><a className='font-Ovo hover:text-gray-600 transition-colors' onClick={closeMenu} href="#top">Home</a></li>
             <li><a className='font-Ovo hover:text-gray-600 transition-colors' onClick={closeMenu} href="#about">About me</a></li>
-            <li><a className='font-Ovo hover:text-gray-600 transition-colors' onClick={closeMenu} href="#services">Services</a></li>
+            <li><a className='font-Ovo hover:text-gray-600 transition-colors' onClick={closeMenu} href="#Focus">Focus</a></li>
             <li><a className='font-Ovo hover:text-gray-600 transition-colors' onClick={closeMenu} href="#work">My Works</a></li>
             <li><a className='font-Ovo hover:text-gray-600 transition-colors' onClick={closeMenu} href="#contact">Contact me</a></li>
         </ul>
