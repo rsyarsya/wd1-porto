@@ -1,11 +1,8 @@
-// next.config.js
-const { withPayload } = require('@payloadcms/next/withPayload')
+import { withPayload } from '@payloadcms/next/withPayload'
 
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  images: {
-    domains: ['localhost'],
-  },
+  // Config kamu yang lain
 }
 
-module.exports = withPayload(nextConfig)
+export default withPayload(nextConfig)
