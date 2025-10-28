@@ -8,20 +8,78 @@ const Header = () => {
         <div>
             <Image src={assets.ppgue} alt="PPGUE" className='rounded-full w-32'/>
         </div>
-         <h3 className="flex items-end gap-2 text-xl md:text-2xl mb-3 font-Ovo"
+
+        <h3 className="flex items-end gap-2 text-xl md:text-2xl mb-3 font-Ovo"
             >Hi! I`m Rasyadwa Arsya <Image src={assets.hand_icon} alt="Hand Icon" className='w-6'/></h3>
         <h1 className='text-3xl sm:text-6xl lg:text-[66px] font-Ovo'>
             Tech Strategist & Sustainable Innovation Enthusiast.</h1>
             <p className='max-w-2xl mx-auto font-Ovo'>
-            I`m an Information Technology student passionate about developing sustainable energy and technology solutions that empower communities and shape a better future.
+            I`m an Information Technology student passionate about developing sustainable energy and 
+            technology solutions that empower communities and shape a better future.
             </p>
+            
             <div className='flex flex-col sm:flex-row items-center gap-4 mt-4'>
+                
                 <a href="#contact"
-                className='px-10 py-3 border border-white rounded-full bg-black text-white flex items-center gap-2'
-                >contact me <Image src={assets.right_arrow_white} alt='Right Arrow White' className='w-4'></Image></a>
+                   className='
+                    group
+                    px-10 py-3 border rounded-full flex items-center gap-2
+                    transition-all duration-300 ease-out
+
+                    /* Style Light Mode (Base) */
+                    bg-black text-white border-black
+                    
+                    /* Style Light Mode (Hover) */
+                    hover:bg-transparent hover:text-black
+                    
+                    /* Style Dark Mode (Base) */
+                    dark:bg-transparent dark:text-white dark:border-white
+                    
+                    /* Style Dark Mode (Hover) */
+                    dark:hover:bg-white dark:hover:text-black
+                   '
+                >
+                  contact me 
+                  <Image 
+                    src={assets.right_arrow_white} 
+                    alt='Right Arrow White' 
+                    className='w-4 transition-all duration-300
+                               group-hover:invert /* Light Hover: (Putih -> Hitam) */
+                               dark:invert /* Dark Base: (Putih -> Putih) */
+                               dark:group-hover:invert /* Dark Hover: (Putih -> Hitam) */
+                               '
+                  />
+                </a>
 
                 <a href="/cv - Rasyadwa Arsya.pdf" download 
-                className='px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2'>my resume <Image src={assets.download_icon} alt='Right Arrow White' className='w-4'></Image></a>
+                   className='
+                    group
+                    px-10 py-3 border rounded-full flex items-center gap-2
+                    transition-all duration-300 ease-out
+                    
+                    /* Style Light Mode (Base) */
+                    bg-white text-black border-gray-400
+                    
+                    /* Style Light Mode (Hover) */
+                    hover:bg-transparent hover:text-black hover:border-black
+                    
+                    /* Style Dark Mode (Base) */
+                    dark:bg-white dark:text-black dark:border-white
+                    
+                    /* Style Dark Mode (Hover) */
+                    dark:hover:bg-transparent dark:hover:text-white dark:hover:border-white
+                   '
+                >
+                   my resume 
+                   <Image 
+                    src={assets.download_icon} 
+                    alt='Download Icon' 
+                    className='w-4 transition-all duration-300
+                               group-hover:invert /* Light Hover: (Hitam -> Putih) */
+                               dark:group-hover:invert /* Dark Hover: (Hitam -> Putih) */
+                               '
+                   />
+                </a>
             </div>
     </div>
   );
