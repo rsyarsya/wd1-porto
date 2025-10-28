@@ -1,23 +1,48 @@
 import React from "react";
 import Image from "next/image";
+import { motion } from "motion/react"
 import { assets, serviceData } from "@/assets/assets";
 
 const Focus = () => {
   return (
-    <div id="Focus" className="w-full px-[12%] py-10
+    <motion.div
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 1 }}
+    id="Focus" className="w-full px-[12%] py-10
     scroll-mt-20">
-        <h4 className='text-center mb-2 text-lg font-Ovo'>
-        What I do</h4>
-        <h2 className='text-center text-5xl font-ovo '>
-        Current Focus & Projects</h2>
 
-        <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
+        <motion.h4
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y:0 }}
+        transition={{ duration: 0.5, delay:0.3 }}
+        className='text-center mb-2 text-lg font-Ovo'>
+        What I do</motion.h4>
+
+        <motion.h2
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y:0 }}
+        transition={{ duration: 0.5, delay:0.5 }}
+        className='text-center text-5xl font-ovo '>
+        Current Focus & Projects</motion.h2>
+
+        <motion.p
+        initial={{ opacity: 0}}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay:0.7 }}
+        className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
         I`m currently exploring the intersection of sustainability, IoT, and renewable energy — integrating clean technology with social impact.
-        I enjoy working on projects that combine engineering, data, and design thinking to create something that matters.</p>
+        I enjoy working on projects that combine engineering, data, and design thinking to create something that matters.</motion.p>
     
-        <div className="grid-auto my-10">
+        <motion.div
+        initial={{ opacity: 0}}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.9, delay:0.6 }}
+        className="grid-auto my-10">
             {serviceData.map(({icon, title, description, link}, index)=>(
-                <div key={index}
+                <motion.div
+                whileHover={{ scale: 1.05 }}
+                key={index}
                 className="border border-gray-400 rounded-lg px-8 py-12 
                 hover:shadow-[4px_4px_0_#000] cursor-pointer 
                 hover:bg-(--color-light-hover)
@@ -31,11 +56,11 @@ const Focus = () => {
                     <a href={link}>
                         Read more <Image src={assets.right_arrow} alt="Right Arrow" className="w-4" />
                     </a>
-                </div>
+                </motion.div>
             ))}
-        </div>
+        </motion.div>
     
-    </div>
+    </motion.div>
   );
 };  
 

@@ -1,23 +1,49 @@
 import React from 'react'
 import Image from 'next/image'
+import { motion } from 'motion/react'
 import { assets, workData } from '@/assets/assets'
 
 const Work = (isDarkMode) => {
   return (
-    <div id="Work" className='w-full px-[12%] py-10
+    <motion.div
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 1 }}
+    id="Work" className='w-full px-[12%] py-10
     scroll-mt-20'>
-        <h4 className='text-center mb-2 text-lg font-Ovo'>
-        My Portfolio</h4>
-        <h2 className='text-center text-5xl font-ovo '>
-        My latest work</h2>
+        
+        <motion.h4
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y:0 }}
+        transition={{ duration: 0.5, delay:0.3 }}
+        className='text-center mb-2 text-lg font-Ovo'>
+        My Portfolio</motion.h4>
 
-        <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
-        Here are some of the projects I`ve worked on — from building websites, designing UI/UX concepts, to leading initiatives that bridge technology and people.</p>
+        <motion.h2
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y:0 }}
+        transition={{ duration: 0.5, delay:0.5 }}
+        className='text-center text-5xl font-ovo '>
+        My latest work</motion.h2>
+
+        <motion.p
+        initial={{ opacity: 0}}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay:0.7 }}
+        className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
+        Here are some of the projects I`ve worked on — from building websites, designing UI/UX concepts, to leading initiatives that bridge technology and people.</motion.p>
         <div>
 
-        <div className='grid-auto my-10  gap-5 dark:text-black'>
+        <motion.div
+        initial={{ opacity: 0}}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.9, delay:0.6 }}
+        className='grid-auto my-10  gap-5 dark:text-black'>
             {workData.map((project, index)=>(
-                <div key={index}
+                <motion.div
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+                key={index}
                 className='aspect-square bg-no-repeat bg-cover bg-center rounded-lg
                 relative cursor-pointer group'
                 style={{backgroundImage: `url(${project.bgImage})`}}>
@@ -36,21 +62,25 @@ const Work = (isDarkMode) => {
                             </div>
                         </div>
 
-                </div>
+                </motion.div>
             ))}
-        </div>
+        </motion.div>
 
-        <a href="" className='w-max flex items-center justify-center gap-2
+        <motion.a
+        initial={{ opacity: 0}}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay:1.1 }}
+        href="" className='w-max flex items-center justify-center gap-2
         text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto
         my-20 hover:bg-(--color-light-hover) duration-500 dark:text-white dark:border-white
         dark:hover:bg-(--color-dark-hover)'>
             Show more
             <Image src={isDarkMode ? assets.right_arrow_bold_dark : assets.right_arrow} alt='right arrow'
             className='w-4'/>
-        </a>
+        </motion.a>
 
     </div>
-    </div>
+    </motion.div>
     );
 };
 export default Work;
