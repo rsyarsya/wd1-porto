@@ -1,10 +1,11 @@
-/** @type {import('next').NextConfig} */
-const path = require('path');
+// next.config.js
+const { withPayload } = require('@payloadcms/next/withPayload')
 
 const nextConfig = {
-  turbopack: {
-    root: path.resolve(__dirname),
+  reactStrictMode: true,
+  images: {
+    domains: ['localhost'],
   },
-};
+}
 
-module.exports = nextConfig;
+module.exports = withPayload(nextConfig)
