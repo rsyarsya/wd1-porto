@@ -40,7 +40,9 @@ return (
             `}
         >
             <a href="#top">
-                <Image src={isDarkMode ? assets.logo_dark :  assets.logo} alt="logo" className='w-28 cursor-pointer mr-14'/>
+                {/* Gunakan CSS untuk hide/show berdasarkan dark mode */}
+                <Image src={assets.logo} alt="logo" className='w-28 cursor-pointer mr-14 dark:hidden'/>
+                <Image src={assets.logo_dark} alt="logo" className='w-28 cursor-pointer mr-14 hidden dark:block'/>
             </a>
 
             <ul className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 
@@ -53,14 +55,15 @@ return (
             >
                 <li><a className='font-Ovo text-gray-900 hover:text-gray-600 dark:text-gray-400 dark:hover:text-white transition-colors' href="#top">Home</a></li>
                 <li><a className='font-Ovo text-gray-900 hover:text-gray-600 dark:text-gray-400 dark:hover:text-white transition-colors' href="#about">About me</a></li>
-                <li><a className='font-Ovo text-gray-900 hover:text-gray-600 dark:text-gray-400 dark:hover:text-white transition-colors' href="#Focus">Focus</a></li>
+                <li><a className='font-Ovo text-gray-900 hover:text-gray-600 dark:text-gray-400 dark:hover:text-white transition-colors' href="#focus">Focus</a></li>
                 <li><a className='font-Ovo text-gray-900 hover:text-gray-600 dark:text-gray-400 dark:hover:text-white transition-colors' href="#work">My Works</a></li>
                 <li><a className='font-Ovo text-gray-900 hover:text-gray-600 dark:text-gray-400 dark:hover:text-white transition-colors' href="#contact">Contact me</a></li>
             </ul>   
 
             <div className='flex items-center gap-4'>
                 <button onClick={()=> setIsDarkMode(prev => !prev)}>
-                    <Image src={isDarkMode ? assets.sun_icon : assets.moon_icon} alt="theme_icon" className='w-6'/>
+                    <Image src={assets.moon_icon} alt="theme_icon" className='w-6 dark:hidden'/>
+                    <Image src={assets.sun_icon} alt="theme_icon" className='w-6 hidden dark:block'/>
                 </button>
 
                 <a href="#contact" className='hidden lg:flex items-center gap-3 px-10 py-2.5 
@@ -68,11 +71,14 @@ return (
                                 rounded-full ml-4 font-Ovo 
                                 text-gray-900 dark:text-gray-200 
                                 hover:bg-black/5 dark:hover:bg-white/10 transition-colors'>
-                    Contact <Image src={isDarkMode ? assets.arrow_icon_dark : assets.arrow_icon} alt="arrow_icon" className='w-3'/>
+                    Contact 
+                    <Image src={assets.arrow_icon} alt="arrow_icon" className='w-3 dark:hidden'/>
+                    <Image src={assets.arrow_icon_dark} alt="arrow_icon" className='w-3 hidden dark:block'/>
                 </a>
 
                 <button className='block md:hidden ml-3' onClick={openMenu}>
-                    <Image src={isDarkMode ? assets.menu_white : assets.menu_black} alt="menu_icon" className='w-6'/>
+                    <Image src={assets.menu_black} alt="menu_icon" className='w-6 dark:hidden'/>
+                    <Image src={assets.menu_white} alt="menu_icon" className='w-6 hidden dark:block'/>
                 </button>   
             </div>
         </nav>
@@ -87,12 +93,13 @@ return (
                       transition-all duration-500 z-60 pointer-events-auto'
         >
             <div className='absolute right-6 top-6 cursor-pointer z-70' onClick={closeMenu}>
-                  <Image src={isDarkMode ? assets.close_white : assets.close_black} alt="close_icon" className='w-5' />
+                  <Image src={assets.close_black} alt="close_icon" className='w-5 dark:hidden' />
+                  <Image src={assets.close_white} alt="close_icon" className='w-5 hidden dark:block' />
             </div>
 
             <li><a className='font-Ovo text-gray-900 hover:text-gray-600 dark:text-gray-400 dark:hover:text-white transition-colors' onClick={closeMenu} href="#top">Home</a></li>
             <li><a className='font-Ovo text-gray-900 hover:text-gray-600 dark:text-gray-400 dark:hover:text-white transition-colors' onClick={closeMenu} href="#about">About me</a></li>
-            <li><a className='font-Ovo text-gray-900 hover:text-gray-600 dark:text-gray-400 dark:hover:text-white transition-colors' onClick={closeMenu} href="#Focus">Focus</a></li>
+            <li><a className='font-Ovo text-gray-900 hover:text-gray-600 dark:text-gray-400 dark:hover:text-white transition-colors' onClick={closeMenu} href="#focus">Focus</a></li>
             <li><a className='font-Ovo text-gray-900 hover:text-gray-600 dark:text-gray-400 dark:hover:text-white transition-colors' onClick={closeMenu} href="#work">My Works</a></li>
             <li><a className='font-Ovo text-gray-900 hover:text-gray-600 dark:text-gray-400 dark:hover:text-white transition-colors' onClick={closeMenu} href="#contact">Contact me</a></li>
         </ul>

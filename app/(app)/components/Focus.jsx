@@ -9,7 +9,7 @@ const Focus = () => {
     initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
     transition={{ duration: 1 }}
-    id="Focus" className="w-full px-[12%] py-10
+    id="focus" className="w-full px-[12%] py-10
     scroll-mt-20">
 
         <motion.h4

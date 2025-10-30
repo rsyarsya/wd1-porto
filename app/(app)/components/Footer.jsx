@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { assets } from '@/assets/assets'
 
-const Footer = (isDarkMode) => {
+const Footer = ({isDarkMode}) => {
   return (
     <div className='mt-20'>
         <div className='text-center'>
@@ -11,7 +11,7 @@ const Footer = (isDarkMode) => {
 
             <div className='w-max flex items-center gap-2 mx-auto'>
                 <Image src={isDarkMode ? assets.mail_icon_dark : assets.mail_icon} alt='mail' className='w-6' />
-                rasyadwarsya93@gmail.com
+                rasyadwaarsyairnantyanto2006@mail.ugm.ac.id
             </div>
         </div>
 
@@ -19,9 +19,9 @@ const Footer = (isDarkMode) => {
 border-gray-400 mx-[10%] mt-12 py-6'>
     <p>© 2025 Rasyadwa Arsya. All rights reserved.</p>
     <ul>
-        <li><a target="_blank" href="">Github</a></li>
-        <li><a target="_blank" href="">LinkedIn</a></li>
-        <li><a target="_blank" href="">Instagram</a></li>
+        <li><a target="_blank" href="https://github.com/rsyarsya">Github</a></li>
+        <li><a target="_blank" href="www.linkedin.com/in/rasyadwa-arsya-875b65320">LinkedIn</a></li>
+        <li><a target="_blank" href="https://www.instagram.com/rasyadwarsya93_">Instagram</a></li>
     </ul>
 </div>
 

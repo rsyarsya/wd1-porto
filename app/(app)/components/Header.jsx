@@ -15,14 +15,14 @@ const Header = () => {
         </motion.div>
 
         <motion.h3
-        initial={{y: -20, scale: 0 }}
-        whileInView={{y:0, opacity: 1}}
+        initial={{y: -20, scale: 0, opacity: 0 }}
+        whileInView={{y:0, scale: 1, opacity: 1}}
         transition={{ duration: 0.6, delay:0.3 }}
         className="flex items-end gap-2 text-xl md:text-2xl mb-3 font-Ovo"
             >Hi! I`m Rasyadwa Arsya <Image src={assets.hand_icon} alt="Hand Icon" className='w-6'/></motion.h3>
         <motion.h1
-        initial={{y: -20, scale: 0 }}
-        whileInView={{y:0, opacity: 1}}
+        initial={{y: -20, scale: 0, opacity: 0 }}
+        whileInView={{y:0, scale: 1, opacity: 1}}
         transition={{ duration: 0.8, delay:0.5 }}
         className='text-3xl sm:text-6xl lg:text-[66px] font-Ovo'>
             Tech Strategist & Sustainable Innovation Enthusiast.</motion.h1>

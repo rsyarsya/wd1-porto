@@ -3,13 +3,13 @@ import Image from 'next/image'
 import { motion } from 'motion/react'
 import { assets, workData } from '@/assets/assets'
 
-const Work = (isDarkMode) => {
+const Work = ({isDarkMode}) => {
   return (
     <motion.div
     initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
     transition={{ duration: 1 }}
-    id="Work" className='w-full px-[12%] py-10
+    id="work" className='w-full px-[12%] py-10
     scroll-mt-20'>
         
         <motion.h4

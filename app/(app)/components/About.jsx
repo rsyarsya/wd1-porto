@@ -5,7 +5,7 @@ import { assets, infoList, toolsData } from "@/assets/assets";
 
 
 
-const About = (isDarkMode) => {
+const About = ({isDarkMode}) => {
   return (
     <motion.div
     initial={{ opacity: 0 }}
