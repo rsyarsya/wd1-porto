@@ -79,37 +79,41 @@ export const assets = {
     right_arrow_bold_dark,
     gemini_hd_bg_light,
     ppgue,
-    kmtetot
+    kmtetot,
 };
 
 export const workData = [
     {
-        title: 'Frontend project',
-        description: 'Web Design',
-        bgImage: '/work-1.png',
+        title: 'Frontend for BRIN project',
+        description: 'Frontend Developer',
+        bgImage: '/BRIN.png',
+        link: 'https://brin-cradle-0.vercel.app/',
     },
     {
-        title: 'Geo based app',
-        description: 'Mobile App',
-        bgImage: '/work-2.png',
+        title: 'HydroConnect Mobile app',
+        description: 'Frontend Developer',
+        bgImage: '/APP.png',
+        link: 'coming soon',
     },
     {
-        title: 'Photography site',
-        description: 'Web Design',
-        bgImage: '/work-3.png',
+        title: 'Bridge Finding Algorithm Visualizer',
+        description: 'Developer & Designer',
+        bgImage: '/BRIDGE.png',
+        link: 'https://arnold-awardee-toronto.vercel.app/',
     },
     {
-        title: 'UI/UX designing',
-        description: 'UI/UX Design',
-        bgImage: '/work-4.png',
+        title: 'UI/UX Concept designing',
+        description: 'UI/UX Design and Concept Development',
+        bgImage: '/AIRKU.png',
+        link: 'https://www.canva.com/design/DAG0mZT4wDA/OtjFEgO2YW8GXwNBbpxSMg/edit',
     },
 ];
 
 export const serviceData = [
-    { icon: assets.web_icon, title: 'Web design', description: 'Web development is the process of building, programming...', link: '' },
-    { icon: assets.mobile_icon, title: 'Mobile app', description: 'Mobile app development involves creating software for mobile devices...', link: '' },
-    { icon: assets.ui_icon, title: 'UI/UX design', description: 'UI/UX design focuses on creating a seamless user experience...', link: '' },
-    { icon: assets.graphics_icon, title: 'Graphics design', description: 'Creative design solutions to enhance visual communication...', link: '' },
+    { icon: assets.web_icon, title: 'Dashboard web', description: 'HydroConnect Project Analysis: Visualizing power generation and energy efficiency improvements in Dukuh Pengos through solar integration and smart instrumentation....', link: 'https://hydroconnect-electricity-analysis.vercel.app/' },
+    { icon: assets.mobile_icon, title: 'Hydroconnect Mobile app', description: 'HydroConnect Mobile App: Monitor clean water quality remotely — a collaboration with Telkom and IEEE SIGHT, soon to be launched on Play Store and App Store... (link coming soon)', link: '' },
+    { icon: assets.ui_icon, title: 'HydroConnect Project', description: 'A smart energy and water management system integrating solar power, IoT monitoring, and data analytics to enhance sustainability in rural communities. Collaborative Project of KMTETI x KMTK x PT TELKOM Indonesia... (link coming soon)', link: '' },
+    { icon: assets.graphics_icon, title: 'GEO UGM x SUTD Project', description: 'UGM–SUTD Collaboration in GEO Program: Designing Energy Systems & Empowering Local Industries...', link: 'https://dtmi.ft.ugm.ac.id/kolaborasi-ugm-sutd-dalam-program-geo-merancang-sistem-energi-dan-mendukung-ikm-lokal/' },
 ];
 
 export const infoList = [

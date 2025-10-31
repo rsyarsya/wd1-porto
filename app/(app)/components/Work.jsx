@@ -44,6 +44,7 @@ const Work = ({isDarkMode}) => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
                 key={index}
+                onClick={() => window.open(project.link, '_blank')}
                 className='aspect-square bg-no-repeat bg-cover bg-center rounded-lg
                 relative cursor-pointer group'
                 style={{backgroundImage: `url(${project.bgImage})`}}>
