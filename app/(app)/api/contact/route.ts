@@ -3,7 +3,8 @@ import { Resend } from 'resend'
 import { getPayload } from 'payload'
 import config from '@payload-config'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Tambahkan ini untuk mencegah static generation
+export const dynamic = 'force-dynamic'
 
 export async function POST(req: NextRequest) {
   try {
@@ -30,26 +31,33 @@ export async function POST(req: NextRequest) {
       },
     })
 
-    // Kirim email via Resend
-    try {
-      await resend.emails.send({
-        from: 'Contact Form <onboarding@resend.dev>',
-        to: process.env.EMAIL_TO || 'your-email@example.com',
-        subject: `New Contact from ${name}`,
-        html: `
-          <h2>New Contact Form Submission</h2>
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Message:</strong></p>
-          <p>${message.replace(/\n/g, '<br>')}</p>
-          <hr>
-          <p><small>View in admin: ${process.env.NEXT_PUBLIC_SERVER_URL}/admin/collections/contacts/${contact.id}</small></p>
-        `,
-        replyTo: email,
-      })
-    } catch (emailError) {
-      console.error('Email send error:', emailError)
-      // Email gagal tapi data tetap tersimpan
+    // Kirim email via Resend (hanya jika API key tersedia)
+    if (process.env.RESEND_API_KEY) {
+      try {
+        // Inisialisasi Resend di dalam function
+        const resend = new Resend(process.env.RESEND_API_KEY)
+        
+        await resend.emails.send({
+          from: 'Contact Form <onboarding@resend.dev>',
+          to: process.env.EMAIL_TO || 'your-email@example.com',
+          subject: `New Contact from ${name}`,
+          html: `
+            <h2>New Contact Form Submission</h2>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Message:</strong></p>
+            <p>${message.replace(/\n/g, '<br>')}</p>
+            <hr>
+            <p><small>View in admin: ${process.env.NEXT_PUBLIC_SERVER_URL}/admin/collections/contacts/${contact.id}</small></p>
+          `,
+          replyTo: email,
+        })
+      } catch (emailError) {
+        console.error('Email send error:', emailError)
+        // Email gagal tapi data tetap tersimpan
+      }
+    } else {
+      console.warn('RESEND_API_KEY not found, skipping email notification')
     }
 
     return NextResponse.json({
