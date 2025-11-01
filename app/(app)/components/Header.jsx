@@ -4,6 +4,16 @@ import React from "react";
 import { motion } from "motion/react"
 
 const Header = () => {
+  const handleDownload = (e) => {
+    e.preventDefault();
+    const link = document.createElement('a');
+    link.href = '/CVArsya.pdf';
+    link.download = 'CVArsya.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className='w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4'>
         <motion.div
@@ -76,7 +86,8 @@ const Header = () => {
                 initial={{y: 30, opacity: 0 }}
                 whileInView={{y:0, opacity: 1}}
                 transition={{ duration: 0.6, delay:1.2 }}
-                href="/cv - Rasyadwa Arsya.pdf" download 
+                href="#"
+                onClick={handleDownload}
                    className='
                     group
                     px-10 py-3 border rounded-full flex items-center gap-2
